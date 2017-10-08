@@ -1,12 +1,5 @@
 <template>
   <v-layout column justify-center align-center>
-    <v-flex xs12 sm5>
-      <v-text-field
-        name="input-7-1"
-        label="Label Text"
-        multi-line
-      ></v-text-field>
-    </v-flex>
     <v-flex xs12 sm8 md6>
       <h1 class="headline text-xs-center">Find the Closest Kiosk</h1>
       <v-card
@@ -15,21 +8,19 @@
         height="300px"
         class="mb-2"
       >
-        <v-toolbar floating dense light class="mt-2">
-          <v-layout>
-            <v-text-field prepend-icon="search" hide-details single-line></v-text-field>
-            <v-btn icon>
-              <v-icon>my_location</v-icon>
-            </v-btn>
-            <v-btn icon>
-              <v-icon>more_vert</v-icon>
-            </v-btn>
-          </v-layout>
-
+        <v-toolbar
+          dense
+          light
+        >
+          <v-text-field prepend-icon="search" hide-details single-line light></v-text-field>
+          <v-btn icon>
+            <v-icon>my_location</v-icon>
+          </v-btn>
+          <v-btn icon>
+            <v-icon>more_vert</v-icon>
+          </v-btn>
         </v-toolbar>
       </v-card>
-
-
 
       <v-card>
         <v-card-title class="title">Locations</v-card-title>
