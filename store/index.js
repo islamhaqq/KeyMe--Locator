@@ -58,7 +58,12 @@ export const state = () => ({
    * Whether the "request local kiosk" dialog is open or not.
    * @type {Boolean}
    */
-  isRequestKioskDialogOpen: false
+  isRequestKioskDialogOpen: false,
+  /**
+   * All the requests of users for kiosks in their location.
+   * @type {Array}
+   */
+  localKioskRequests: []
 })
 
 export const mutations = {
@@ -75,5 +80,15 @@ export const mutations = {
     } else {
       state.isRequestKioskDialogOpen = !state.isRequestKioskDialogOpen
     }
+  },
+  /**
+   * Add a user request for a kiosk in a location.
+   * @method submitLocalKioskRequest
+   * @param  {Object} state   - The application level state.
+   * @param  {Object} payload - The content of the request the user made.
+   * @return {Void}
+   */
+  submitLocalKioskRequest (state, payload) {
+    state.localKioskRequests.push(payload)
   }
 }
