@@ -1,4 +1,8 @@
 export const state = () => ({
+  /**
+   * All the retailer stores that a KeyMe kiosk can be found.
+   * @type {Array}
+   */
   locations: [
     {
       id: 'asdoiasdi2132193OIODioasd234',
@@ -49,11 +53,27 @@ export const state = () => ({
       city: 'Jackson Heights',
       state: 'NY'
     }
-  ]
+  ],
+  /**
+   * Whether the "request local kiosk" dialog is open or not.
+   * @type {Boolean}
+   */
+  isRequestKioskDialogOpen: false
 })
 
 export const mutations = {
-  toggleSidebar (state) {
-    state.sidebar = !state.sidebar
+  /**
+   * Open or close the "request local kiosk" dialog.
+   * @method toggleRequestKioskDialog
+   * @param  {Object} state - The application level state.
+   * @param  {Boolean} payload - Optional parameter whether the dialog is open.
+   * @return {Void}
+   */
+  toggleRequestKioskDialog (state, payload) {
+    if (payload) {
+      state.isRequestKioskDialogOpen = payload
+    } else {
+      state.isRequestKioskDialogOpen = !state.isRequestKioskDialogOpen
+    }
   }
 }

@@ -44,7 +44,7 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn primary flat>Request Local Kiosk</v-btn>
+          <RequestKioskDialog />
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -52,7 +52,12 @@
 </template>
 
 <script>
+  import RequestKioskDialog from '@/components/RequestKioskDialog'
+
   export default {
+    components: {
+      RequestKioskDialog
+    },
     computed: {
       locations () {
         return this.$store.state.locations
