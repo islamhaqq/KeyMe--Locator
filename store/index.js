@@ -13,10 +13,10 @@ export const state = () => ({
     },
     {
       id: 'zxpocxzopc2131242421',
-      retailer: '7 Eleven',
-      address: '85-10 Northern Boulevard, Jackson Heights, NY, 11372',
-      city: 'Jackson Heights',
-      state: 'NY'
+      retailer: 'Kroger',
+      address: '300 N DEAN RD, AUBURN, AL, 36830',
+      city: 'Auburn',
+      state: 'AL'
     },
     {
       id: 'zxpocxzopc2131242421',

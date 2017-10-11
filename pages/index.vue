@@ -6,17 +6,9 @@
       <h1 class="headline text-xs-center">Find the Closest Kiosk</h1>
 
       <!-- Google Maps -->
-      <v-card
-        img="/google-maps.jpg"
-        flat
-        height="300px"
-        class="mb-2"
-      >
-        <v-toolbar
-          dense
-          light
-        >
-          <v-text-field prepend-icon="search" hide-details single-line light></v-text-field>
+      <v-card img="/google-maps.jpg" height="300px" flat class="mb-2">
+        <v-toolbar dense light>
+          <v-text-field v-model="search" type="text" placeholder="Search locations..." prepend-icon="search" hide-details single-line light />
           <v-btn icon>
             <v-icon>my_location</v-icon>
           </v-btn>
@@ -28,7 +20,7 @@
         <v-card-title class="title">Locations</v-card-title>
 
         <v-list>
-          <v-list-tile v-for="location of locations" :key="location.id" three-line class="mb-3">
+          <v-list-tile v-for="location of filteredLocations" :key="location.id" three-line class="mb-3">
             <v-list-tile-action>
               <v-icon color="primary">location_on</v-icon>
             </v-list-tile-action>
@@ -60,6 +52,11 @@
     components: {
       RequestKioskDialog
     },
+    data: function () {
+      return {
+        search: ''
+      }
+    },
     computed: {
       /**
        * Gets all the data on all the locations kiosks are present in.
@@ -68,6 +65,11 @@
        */
       locations () {
         return this.$store.state.locations
+      },
+      filteredLocations () {
+        return this.locations.filter(location => {
+          return location.address.toLowerCase().includes(this.search.toLowerCase())
+        })
       }
     }
   }
