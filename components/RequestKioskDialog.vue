@@ -16,18 +16,23 @@ for analytics to determine priority locaitons for future KeyMe kiosks. -->
       </v-toolbar>
 
       <v-card-text>
-        <span>Don't have a KeyMe kiosk near you? No worries, you can request one and we'll get one setup around your location as soon as possible.</span>
+        <p class="mb-3">Don't have a KeyMe kiosk near you? No worries, you can request one and we'll get one setup around your location as soon as possible.</p>
 
         <form @submit.prevent="submit">
           <v-layout column>
+            <!-- User's name. -->
             <v-text-field label="Name" v-model="request.name" prepend-icon="face" />
 
+            <!-- User's email. -->
             <v-text-field type="email" label="Email" v-model="request.email" prepend-icon="email" />
 
+            <!-- The zip code in which the user is requesting a kiosk. -->
             <v-text-field label="Zip Code" v-model="request.zipCode" prepend-icon="location_city" />
 
+            <!-- Any other comments they have regarding their request. -->
             <v-text-field textarea v-model="request.additionalComments" label="Additional comments" prepend-icon="comment" />
 
+            <!-- Button that submits the request form. -->
             <v-btn type="submit" color="primary">Submit</v-btn>
           </v-layout>
         </form>
