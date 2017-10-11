@@ -20,7 +20,7 @@
 
       <!-- Kiosk Locations -->
       <v-card>
-        <v-card-title class="title">Locations</v-card-title>
+        <v-card-title class="title">{{ `Locations (${filteredLocations.length})` }}</v-card-title>
 
         <!-- Listed locations. -->
         <v-list three-line>
