@@ -12,12 +12,12 @@
   },
   "dependencies": {
     "nuxt": "^1.0.0-rc11",
+    "vue2-google-maps": "^0.8.3",
     "vuetify": "^0.16.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "babel-plugin-transform-imports": "^1.4.1",
-    "vuetify-loader": "^0.1.0",
     "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.9.0",
@@ -27,6 +27,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1"
+    "stylus-loader": "^3.0.1",
+    "vuetify-loader": "^0.1.0"
   }
 }
