@@ -1,8 +1,13 @@
-// Specify overrides (theme and/or base variables etc.)
-// See https://vuetifyjs.com/quick-start
+/**
+ * Theme configuration. See https://vuetifyjs.com/quick-start.
+ */
+
+@require '../../node_modules/vuetify/src/stylus/settings/_colors'
+
+// define app color theme and overrides
 $theme := {
   primary: #F5B70B
-  accent: #ce93d8
+  accent: $yellow.base
   secondary: #424242
   info: #0D47A1
   warning: #ffb300
