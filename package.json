@@ -5,9 +5,10 @@
   "author": "Syed Aman <sna274@nyu.edu>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
+    "dev": "nuxt",
+    "prod": "nuxt build && nuxt start",
     "generate": "nuxt generate",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
