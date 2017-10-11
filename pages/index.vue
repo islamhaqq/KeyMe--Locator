@@ -66,9 +66,18 @@
       locations () {
         return this.$store.state.locations
       },
+      /**
+       * Tries to get the kiosk location that the user is trying to search for.
+       * @method filteredLocations
+       * @return {Array} - An array of kiosk locations.
+       */
       filteredLocations () {
         return this.locations.filter(location => {
-          return location.address.toLowerCase().includes(this.search.toLowerCase())
+          return (
+            location.address.toLowerCase().includes(this.search.toLowerCase()) || location.retailer.toLowerCase().includes(this.search.toLowerCase()) ||
+            location.state.toLowerCase().includes(this.search.toLowerCase()) ||
+          location.city.toLowerCase().includes(this.search.toLowerCase())
+          )
         })
       }
     }
