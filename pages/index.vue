@@ -9,7 +9,7 @@
       <v-card lat class="mb-2">
         <v-toolbar dense light>
           <v-text-field v-model="search" type="text" placeholder="Search locations..." prepend-icon="search" hide-details single-line light />
-          <v-btn icon>
+          <v-btn @click.native="updateMapToLocation" icon>
             <v-icon>my_location</v-icon>
           </v-btn>
         </v-toolbar>
@@ -89,6 +89,17 @@
           location.city.toLowerCase().includes(this.search.toLowerCase())
           )
         })
+      }
+    },
+    methods: {
+      /**
+       * Updates the Google Map to user's current location if GPS allowed.
+       * @method updateMapToLocation
+       * @return {Void}
+       */
+      updateMapToLocation () {
+        console.log('update map to location')
+        // do stuff
       }
     }
   }
