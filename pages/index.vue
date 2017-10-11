@@ -19,8 +19,8 @@
       <v-card>
         <v-card-title class="title">Locations</v-card-title>
 
-        <v-list>
-          <v-list-tile v-for="location of filteredLocations" :key="location.id" three-line class="mb-3">
+        <v-list three-line>
+          <v-list-tile v-for="location of filteredLocations" :key="location.id" class="mb-3" ripple>
             <v-list-tile-action>
               <v-icon color="primary">location_on</v-icon>
             </v-list-tile-action>
@@ -29,7 +29,7 @@
               <v-list-tile-sub-title>
                 {{ `${location.city}, ${location.state}` }}
               </v-list-tile-sub-title>
-              <v-list-tile-sub-title>
+              <v-list-tile-sub-title class="accent--text">
                 {{ location.address }}
               </v-list-tile-sub-title>
             </v-list-tile-content>
