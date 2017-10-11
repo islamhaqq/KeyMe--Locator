@@ -16,18 +16,23 @@ for analytics to determine priority locaitons for future KeyMe kiosks. -->
       </v-toolbar>
 
       <v-card-text>
-        <span>Don't have a KeyMe kiosk near you? No worries, you can request one and we'll get one setup around your location as soon as possible.</span>
+        <p class="mb-3">Don't have a KeyMe kiosk near you? No worries, you can request one and we'll get one setup around your location as soon as possible.</p>
 
-        <form @submit.prevent>
+        <form @submit.prevent="submit">
           <v-layout column>
-            <v-text-field label="Name" prepend-icon="face" />
+            <!-- User's name. -->
+            <v-text-field label="Name" v-model="request.name" prepend-icon="face" />
 
-            <v-text-field type="email" label="Email" prepend-icon="email" />
+            <!-- User's email. -->
+            <v-text-field type="email" label="Email" v-model="request.email" prepend-icon="email" />
 
-            <v-text-field label="Zip Code" prepend-icon="location_city" />
+            <!-- The zip code in which the user is requesting a kiosk. -->
+            <v-text-field label="Zip Code" v-model="request.zipCode" prepend-icon="location_city" />
 
-            <v-text-field textarea label="Additional comments" prepend-icon="comment" />
+            <!-- Any other comments they have regarding their request. -->
+            <v-text-field textarea v-model="request.additionalComments" label="Additional comments" prepend-icon="comment" />
 
+            <!-- Button that submits the request form. -->
             <v-btn type="submit" color="primary">Submit</v-btn>
           </v-layout>
         </form>
@@ -38,6 +43,16 @@ for analytics to determine priority locaitons for future KeyMe kiosks. -->
 
 <script>
   export default {
+    data: function () {
+      return {
+        request: {
+          name: '',
+          email: '',
+          zipCode: '',
+          additionalComments: ''
+        }
+      }
+    },
     computed: {
       isRequestKioskDialogOpen: {
         get () {
@@ -49,8 +64,24 @@ for analytics to determine priority locaitons for future KeyMe kiosks. -->
       }
     },
     methods: {
+      /**
+       * Close the dialog.
+       * @method close
+       * @return {Void}
+       */
       close () {
         this.$store.commit('toggleRequestKioskDialog', false)
+      },
+      /**
+       * Submit the user's request for a local kiosk.
+       * @method submit
+       * @return {Void}
+       */
+      submit () {
+        this.$store.commit('submitLocalKioskRequest', this.request)
+
+        // close the dialog after successful submission
+        this.close()
       }
     }
   }
