@@ -19,6 +19,7 @@
       <v-card>
         <v-card-title class="title">Locations</v-card-title>
 
+        <!-- Listed locations. -->
         <v-list three-line>
           <v-list-tile v-for="location of filteredLocations" :key="location.id" class="mb-3" ripple>
             <v-list-tile-action>
@@ -36,6 +37,8 @@
           </v-list-tile>
         </v-list>
 
+        <!-- A button that enables users to request a kiosk in their location
+        if they don't have one around them or would like more. -->
         <v-card-actions>
           <v-spacer></v-spacer>
           <RequestKioskDialog />
@@ -54,6 +57,10 @@
     },
     data: function () {
       return {
+        /**
+         * What the user is typing in to the search bar for locating kiosks.
+         * @type {String}
+         */
         search: ''
       }
     },
