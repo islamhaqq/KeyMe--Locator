@@ -1,9 +1,6 @@
 <template>
   <v-app dark>
-    <v-toolbar fixed app>
-      <v-toolbar-title>KeyMe Kiosk Locator</v-toolbar-title>
-      <v-spacer></v-spacer>
-    </v-toolbar>
+    <NavToolbar />
     <main>
       <v-content>
         <v-container>
@@ -18,5 +15,11 @@
 </template>
 
 <script>
-  export default {}
+  import NavToolbar from '@/components/NavToolbar'
+
+  export default {
+    components: {
+      NavToolbar
+    }
+  }
 </script>
