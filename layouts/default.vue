@@ -7,7 +7,9 @@ route. -->
     <main>
       <v-content>
         <v-container>
-          <nuxt />
+          <v-slide-y-transition mode="out-in">
+            <nuxt />
+          </v-slide-y-transition>
         </v-container>
       </v-content>
     </main>
