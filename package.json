@@ -10,7 +10,7 @@
     "dev": "nuxt",
     "prod": "nuxt build && nuxt start",
     "generate": "nuxt generate",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "nuxt generate && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "nuxt": "^1.0.0-rc11",
