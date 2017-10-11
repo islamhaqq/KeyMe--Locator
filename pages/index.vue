@@ -1,3 +1,5 @@
+<!-- The home page. This page displays the kiosk locator. -->
+
 <template>
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
@@ -59,6 +61,11 @@
       RequestKioskDialog
     },
     computed: {
+      /**
+       * Gets all the data on all the locations kiosks are present in.
+       * @method locations
+       * @return {Array} - An array of kiosk location objects.
+       */
       locations () {
         return this.$store.state.locations
       }

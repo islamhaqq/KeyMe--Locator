@@ -1,3 +1,5 @@
+<!-- The app layout toolbar that provides basic navigation and branding. -->
+
 <template>
   <v-toolbar fixed app>
     <v-toolbar-title>KeyMe Kiosk Locator</v-toolbar-title>

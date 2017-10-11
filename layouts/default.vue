@@ -1,3 +1,6 @@
+<!-- The application layout containing how the UI is structured at every
+route. -->
+
 <template>
   <v-app dark>
     <NavToolbar />
