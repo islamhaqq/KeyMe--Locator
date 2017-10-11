@@ -6,13 +6,16 @@
       <h1 class="headline text-xs-center">Find the Closest Kiosk</h1>
 
       <!-- Google Maps -->
-      <v-card img="/google-maps.jpg" height="300px" flat class="mb-2">
+      <v-card lat class="mb-2">
         <v-toolbar dense light>
           <v-text-field v-model="search" type="text" placeholder="Search locations..." prepend-icon="search" hide-details single-line light />
           <v-btn icon>
             <v-icon>my_location</v-icon>
           </v-btn>
         </v-toolbar>
+        <v-card-media height="300px">
+          <gmap-map :center="{lat:10, lng:10}" :zoom="7" map-type-id="terrain" style="width: 500px; height: 300px"></gmap-map>
+        </v-card-media>
       </v-card>
 
       <!-- Kiosk Locations -->
