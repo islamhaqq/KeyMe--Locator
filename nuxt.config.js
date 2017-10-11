@@ -17,6 +17,9 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
+  router: {
+    base: '/KeyMe--Locator/'
+  },
   plugins: [
     '~/plugins/vuetify.js',
     '~/plugins/vue-google-maps.js'
