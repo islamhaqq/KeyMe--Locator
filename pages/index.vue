@@ -13,9 +13,9 @@
             <v-icon>my_location</v-icon>
           </v-btn>
         </v-toolbar>
-        <v-card-media height="300px">
+        <!-- <v-card-media height="300px">
           <gmap-map :center="{lat:10, lng:10}" :zoom="7" map-type-id="terrain" style="width: 500px; height: 300px"></gmap-map>
-        </v-card-media>
+        </v-card-media> -->
       </v-card>
 
       <!-- Kiosk Locations -->

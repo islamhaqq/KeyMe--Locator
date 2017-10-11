@@ -18,8 +18,7 @@ module.exports = {
     ]
   },
   plugins: [
-    '~/plugins/vuetify.js',
-    '~/plugins/vue-google-maps.js'
+    '~/plugins/vuetify.js'
   ],
   css: [
     '~/assets/style/app.styl'
