@@ -43,8 +43,7 @@ module.exports = {
       ]
     },
     vendor: [
-      '~/plugins/vuetify.js',
-      '~/node_modules/vue2-google-maps/src/main'
+      '~/plugins/vuetify.js'
     ],
     extractCSS: true,
     /*

@@ -3,7 +3,7 @@
  */
 
 import Vue from 'vue'
-import * as VueGoogleMaps from '~/node_modules/vue2-google-maps/src/main'
+import * as VueGoogleMaps from '~/node_modules/vue2-google-maps'
 
 // install the package while specifying the API key and GMAP libraries to use
 Vue.use(VueGoogleMaps, {
