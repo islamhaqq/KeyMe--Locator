@@ -101,7 +101,7 @@
         })
       },
       gMapCenter () {
-        return this.filteredLocations.length === 1 ? this.filteredLocations[0].coordinate : {lat: 40.7556469, lng: -73.88191789999996}
+        return this.filteredLocations.length === 1 ? this.filteredLocations[0].coordinate : (this.geolocation.lat ? this.geolocation : {lat: 40.7556469, lng: -73.88191789999996})
       },
       gMapZoom () {
         return this.filteredLocations.length === 1 ? 15 : 10
