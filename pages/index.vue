@@ -80,6 +80,13 @@
         return this.$store.state.locations
       },
       /**
+       * The user's geolocation via HTML5's geolocation GPS API.
+       * @type {Object}
+       */
+      geolocation () {
+        return this.$store.state.geolocation
+      },
+      /**
        * Tries to get the kiosk location that the user is trying to search for.
        * @method filteredLocations
        * @return {Array} - An array of kiosk locations.
@@ -99,6 +106,15 @@
       gMapZoom () {
         return this.filteredLocations.length === 1 ? 15 : 10
       }
+    },
+    async mounted () {
+      // get geolocation of user using HTML5 geolocation API
+      await navigator.geolocation.getCurrentPosition((position) => {
+        this.$store.commit('updateGeolocation', {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        })
+      })
     }
   }
 </script>

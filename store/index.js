@@ -80,7 +80,23 @@ export const state = () => ({
    * All the requests of users for kiosks in their location.
    * @type {Array}
    */
-  localKioskRequests: []
+  localKioskRequests: [],
+  /**
+   * The user's geolocation via HTML5's geolocation GPS API.
+   * @type {Object}
+   */
+  geolocation: {
+    /**
+     * The latitudinal location of the user fetched by HTML5 gps api.
+     * @type {Number}
+     */
+    lat: null,
+    /**
+     * The longitudinal locatio nof the user fetched by HTML5 gps api.
+     * @type {Number}
+     */
+    lng: null
+  }
 })
 
 export const mutations = {
@@ -107,5 +123,18 @@ export const mutations = {
    */
   submitLocalKioskRequest (state, payload) {
     state.localKioskRequests.push(payload)
+  },
+  /**
+   * Updates the geolocation of the user.
+   * @method updateGeolocation
+   * @param  {Object} state - The application level state.
+   * @param  {Object} payload - The coordinates of the user.
+   * @return {Void}
+   */
+  updateGeolocation (state, payload) {
+    state.geolocation = {
+      lat: payload.lat,
+      lng: payload.lng
+    }
   }
 }
