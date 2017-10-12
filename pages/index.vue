@@ -14,7 +14,10 @@
           </v-btn>
         </v-toolbar>
         <v-card-media height="300px">
-          <gmap-map :center="{lat:10, lng:10}" :zoom="7" map-type-id="terrain" style="width: 500px; height: 300px"></gmap-map>
+          <gmap-map :center="{lat:40.7556469, lng:-73.88191789999996}" :zoom="10" map-type-id="terrain" style="width: 500px; height: 300px">
+            <!-- Markers denoting kiosk locations  -->
+            <gmap-marker v-for="location of filteredLocations" :key="location.id" :position="location.coordinate"/>
+          </gmap-map>
         </v-card-media>
       </v-card>
 
