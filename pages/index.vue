@@ -9,7 +9,7 @@
       <v-card lat class="mb-2">
         <v-toolbar dense light>
           <v-text-field v-model="search" type="text" placeholder="Search locations..." prepend-icon="search" hide-details single-line light />
-          <v-btn @click.native="updateMapToLocation" icon>
+          <v-btn @click.native="updateMapCenterToGeolocation(true)" icon>
             <v-icon>my_location</v-icon>
           </v-btn>
         </v-toolbar>
@@ -67,7 +67,12 @@
          * What the user is typing in to the search bar for locating kiosks.
          * @type {String}
          */
-        search: ''
+        search: '',
+        /**
+         * Whether the user wants the map to center on their location or not.
+         * @type {Boolean}
+         */
+        isCenteredAtGeolocation: false
       }
     },
     computed: {
@@ -100,9 +105,23 @@
           )
         })
       },
+      /**
+       * The location the map is currently centered at.
+       * @method gMapCenter
+       * @return {Object} - Latitudinal and longitudinal coordinates.
+       */
       gMapCenter () {
-        return this.filteredLocations.length === 1 ? this.filteredLocations[0].coordinate : (this.geolocation.lat ? this.geolocation : {lat: 40.7556469, lng: -73.88191789999996})
+        if (this.isCenteredAtGeolocation) {
+          return this.geolocation
+        } else {
+          return this.filteredLocations.length === 1 ? this.filteredLocations[0].coordinate : (this.geolocation.lat ? this.geolocation : {lat: 40.7556469, lng: -73.88191789999996})
+        }
       },
+      /**
+       * The current zoom level of the map.
+       * @method gMapZoom
+       * @return {Number} - The zoom level of the map. Far to near.
+       */
       gMapZoom () {
         return this.filteredLocations.length === 1 ? 15 : 10
       }
@@ -115,16 +134,18 @@
           lng: position.coords.longitude
         })
       })
+
+      // center the map at geolocation
+      // this.isCenteredAtGeolocation = true
     },
     methods: {
       /**
        * Updates the Google Map to user's current location if GPS allowed.
-       * @method updateMapToLocation
+       * @method updateMapCenterToGeolocation
        * @return {Void}
        */
-      updateMapToLocation () {
-        console.log('update map to location')
-        // do stuff
+      updateMapCenterToGeolocation (value) {
+        this.isCenteredAtGeolocation = value
       }
     }
   }
