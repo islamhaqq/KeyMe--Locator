@@ -98,12 +98,24 @@
        * @return {Array} - An array of kiosk locations.
        */
       filteredLocations () {
+        // allows user to search with tags or individual words
+        const filterTags = this.search.toLowerCase().split(' ')
+
         return this.locations.filter(location => {
+          // combine all the searchable criteria and lowercase it
           let locationBlob = location.address + ' ' + location.retailer + ' ' + location.state + ' ' + location.city
 
           locationBlob = locationBlob.toLowerCase()
 
-          return locationBlob.includes(this.search.toLowerCase())
+          // see if the location matches all provided filter tags
+          let matches = true
+          filterTags.forEach((filterTag) => {
+            if (!locationBlob.includes(filterTag)) {
+              matches = false
+            }
+          })
+
+          return matches
         })
       },
       /**
