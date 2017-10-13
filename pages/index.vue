@@ -99,11 +99,11 @@
        */
       filteredLocations () {
         return this.locations.filter(location => {
-          return (
-            location.address.toLowerCase().includes(this.search.toLowerCase()) || location.retailer.toLowerCase().includes(this.search.toLowerCase()) ||
-            location.state.toLowerCase().includes(this.search.toLowerCase()) ||
-          location.city.toLowerCase().includes(this.search.toLowerCase())
-          )
+          let locationBlob = location.address + ' ' + location.retailer + ' ' + location.state + ' ' + location.city
+
+          locationBlob = locationBlob.toLowerCase()
+
+          return locationBlob.includes(this.search.toLowerCase())
         })
       },
       /**
