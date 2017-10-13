@@ -8,7 +8,8 @@
       <!-- Google Maps -->
       <v-card lat class="mb-2">
         <v-toolbar dense light>
-          <v-text-field v-model="search" type="text" placeholder="Search locations..." prepend-icon="search" hide-details single-line light />
+          <!-- TODO: optimizations. Debounce the keyup. -->
+          <v-text-field v-model="search" @keyup="updateMapCenterToGeolocation(false)" type="text" placeholder="Search locations..." prepend-icon="search" hide-details single-line light />
           <v-btn @click.native="updateMapCenterToGeolocation(true)" icon>
             <v-icon>my_location</v-icon>
           </v-btn>
@@ -136,6 +137,7 @@
       })
     },
     methods: {
+      // TODO: We might not need this method since its just a simple assignment.
       /**
        * Updates the Google Map to user's current location if GPS allowed.
        * @method updateMapCenterToGeolocation
