@@ -77,11 +77,23 @@ for analytics to determine priority locaitons for future KeyMe kiosks. -->
        * @method submit
        * @return {Void}
        */
-      submit () {
-        this.$store.commit('submitLocalKioskRequest', this.request)
+      async submit () {
+        try {
+          // (send async awaited request to API here...)
 
-        // close the dialog after successful submission
-        this.close()
+          // update store
+          this.$store.commit('submitLocalKioskRequest', this.request)
+
+          this.$store.commit('toggleSnackbar', {
+            display: true,
+            message: 'Thank you for letting us know! We\'ll try to get a kiosk set up in your requested location asap!'
+          })
+
+          // close the dialog after successful submission
+          this.close()
+        } catch (error) {
+          throw new Error(error)
+        }
       }
     }
   }

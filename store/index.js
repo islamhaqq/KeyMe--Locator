@@ -96,6 +96,14 @@ export const state = () => ({
      * @type {Number}
      */
     lng: null
+  },
+  /**
+   * Whether the app snackbar is open.
+   * @type {Boolean}
+   */
+  snackbar: {
+    display: false,
+    message: ''
   }
 })
 
@@ -136,5 +144,16 @@ export const mutations = {
       lat: payload.lat,
       lng: payload.lng
     }
+  },
+  /**
+   * Opens or closes the app snackbar.
+   * @method toggleSnackbar
+   * @param  {Object} state - The application state.
+   * @param  {Boolean} payload - Whether to open the snackbar or close.
+   * @return {Void}
+   */
+  toggleSnackbar (state, payload) {
+    if (payload.display) state.snackbar.display = payload.display
+    if (payload.message) state.snackbar.message = payload.message
   }
 }

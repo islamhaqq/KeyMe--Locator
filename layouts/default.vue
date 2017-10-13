@@ -16,15 +16,18 @@ route. -->
     <v-footer fixed app>
       <span>&copy; 2017</span>
     </v-footer>
+    <Snackbar />
   </v-app>
 </template>
 
 <script>
   import NavToolbar from '@/components/NavToolbar'
+  import Snackbar from '@/components/snackbar'
 
   export default {
     components: {
-      NavToolbar
+      NavToolbar,
+      Snackbar
     }
   }
 </script>
