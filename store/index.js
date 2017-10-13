@@ -147,11 +147,12 @@ export const mutations = {
    * Opens or closes the app snackbar.
    * @method toggleSnackbar
    * @param  {Object} state - The application state.
-   * @param  {Boolean} payload - Whether to open the snackbar or close.
+   * @param  {Boolean} payload - Optionally holds whether to open or close the
+   * snackbar as well as the message for the snackbar.
    * @return {Void}
    */
   toggleSnackbar (state, payload) {
-    if (payload.display) state.isSnackbarOpen = payload.display
     if (payload.message) state.snackbarMessage = payload.message
+    if (payload.display) state.isSnackbarOpen = payload.display
   }
 }
