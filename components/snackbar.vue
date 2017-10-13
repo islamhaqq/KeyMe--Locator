@@ -1,11 +1,11 @@
 <!-- The app snackbar. -->
 
 <template>
-  <v-snackbar v-model="snackbar.display" bottom>
-    <span>{{ snackbar.message }}</span>
-    <!-- <v-btn @click.native="snackbar.display = false" flat color="pink">
+  <v-snackbar v-model="isSnackbarOpen" bottom>
+    <span>{{ snackbarMessage }}</span>
+    <v-btn @click.native="isSnackbarOpen = false" flat color="pink">
       Close
-    </v-btn> -->
+    </v-btn>
   </v-snackbar>
 </template>
 
@@ -16,15 +16,18 @@
        * Whether the snackbar is open/displaying or not.
        * @type {Boolean}
        */
-      snackbar: {
+      isSnackbarOpen: {
         get () {
-          return this.$store.state.snackbar
+          return this.$store.state.isSnackbarOpen
         },
         set (value) {
           this.$store.commit('toggleSnackbar', {
             display: value
           })
         }
+      },
+      snackbarMessage () {
+        return this.$store.state.snackbarMessage
       }
     }
   }

@@ -101,10 +101,8 @@ export const state = () => ({
    * Whether the app snackbar is open.
    * @type {Boolean}
    */
-  snackbar: {
-    display: false,
-    message: ''
-  }
+  isSnackbarOpen: false,
+  snackbarMessage: ''
 })
 
 export const mutations = {
@@ -153,7 +151,7 @@ export const mutations = {
    * @return {Void}
    */
   toggleSnackbar (state, payload) {
-    if (payload.display) state.snackbar.display = payload.display
-    if (payload.message) state.snackbar.message = payload.message
+    if (payload.display) state.isSnackbarOpen = payload.display
+    if (payload.message) state.snackbarMessage = payload.message
   }
 }
