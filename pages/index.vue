@@ -103,7 +103,7 @@
 
         return this.locations.filter(location => {
           // combine all the searchable criteria and lowercase it
-          let locationBlob = location.address + ' ' + location.retailer + ' ' + location.state + ' ' + location.city
+          let locationBlob = location.address + location.retailer + location.state + location.city
 
           locationBlob = locationBlob.toLowerCase()
 
