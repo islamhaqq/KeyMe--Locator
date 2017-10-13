@@ -9,12 +9,12 @@
       <v-card lat class="mb-2">
         <v-toolbar dense light>
           <v-text-field v-model="search" type="text" placeholder="Search locations..." prepend-icon="search" hide-details single-line light />
-          <v-btn @click.native="updateMapCenterToGeolocation(true)" icon>
+          <v-btn @click.native="updateMapCenterToGeolocation" icon>
             <v-icon>my_location</v-icon>
           </v-btn>
         </v-toolbar>
         <v-card-media height="300px">
-          <gmap-map :center="gMapCenter" :zoom="gMapZoom" map-type-id="terrain" style="width: 500px; height: 300px">
+          <gmap-map :center="center" @center_changed="updateReportedCenter" :zoom="gMapZoom" map-type-id="terrain" style="width: 500px; height: 300px">
             <!-- Markers denoting kiosk locations  -->
             <gmap-marker v-for="location of filteredLocations" :key="location.id" :position="location.coordinate"/>
           </gmap-map>
@@ -55,6 +55,8 @@
 </template>
 
 <script>
+  import _ from 'underscore'
+
   import RequestKioskDialog from '@/components/RequestKioskDialog'
 
   export default {
@@ -72,7 +74,25 @@
          * Whether the user wants the map to center on their location or not.
          * @type {Boolean}
          */
-        isCenteredAtGeolocation: false
+        // isCenteredAtGeolocation: false,
+        /**
+         * The official map center coordinates.
+         * @type {Object}
+         */
+        center: {
+          lat: 40.7556469,
+          lng: -73.88191789999996
+        },
+        reportedLat: 40.7556469,
+        reportedLng: -73.88191789999996
+        /**
+         * The unofficial map center coordinates.
+         * @type {Object}
+         */
+        // reportedCenter: {
+        //   lat: 40.7556469,
+        //   lng: -73.88191789999996
+        // }
       }
     },
     computed: {
@@ -107,14 +127,16 @@
       },
       /**
        * The location the map is currently centered at.
-       * @method gMapCenter
+       * @method reportedCenter
        * @return {Object} - Latitudinal and longitudinal coordinates.
        */
-      gMapCenter () {
-        if (this.isCenteredAtGeolocation) {
-          return this.geolocation
-        } else {
-          return this.filteredLocations.length === 1 ? this.filteredLocations[0].coordinate : {lat: 40.7556469, lng: -73.88191789999996}
+      reportedCenter: {
+        get () {
+          return this.filteredLocations.length === 1 ? this.filteredLocations[0].coordinate : {lat: this.reportedLat, lng: this.reportedLng}
+        },
+        set (newReportedCenter) {
+          this.reportedLat = newReportedCenter.lat
+          this.reportedLng = newReportedCenter.lng
         }
       },
       /**
@@ -141,8 +163,25 @@
        * @method updateMapCenterToGeolocation
        * @return {Void}
        */
-      updateMapCenterToGeolocation (value) {
-        this.isCenteredAtGeolocation = value
+      updateMapCenterToGeolocation () {
+        this.updateReportedCenter(this.geolocation)
+        this.updateOfficialMapCenter()
+      },
+      /**
+       * The unofficial "center" of the map. Vue2-Google-Maps has a caveat
+       * where the map center isn't 100% synchronized with the reported center.
+       * @method updateReportedCenter
+       * @param  {Object} newCenter - What the map SAYS the center is.
+       * @return {Void}
+       */
+      updateReportedCenter (newCenter) {
+        this.reportedCenter = {
+          lat: newCenter.lat,
+          lng: newCenter.lng
+        }
+      },
+      updateOfficialMapCenter () {
+        this.center = _.clone(this.reportedCenter)
       }
     }
   }
