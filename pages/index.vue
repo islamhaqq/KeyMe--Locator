@@ -29,11 +29,13 @@
 
       <!-- Kiosk Locations -->
       <v-card>
-        <v-card-title class="title">{{ `Locations (${filteredLocations.length})` }}</v-card-title>
+        <v-card-title class="title">
+          {{ `Locations (${filteredLocations.length})` }}
+        </v-card-title>
 
         <!-- Listed locations. -->
         <v-list three-line>
-          <v-list-tile v-for="location of filteredLocations" :key="location.id" class="mb-3" ripple>
+          <v-list-tile v-for="location of filteredLocations" :key="location.id" @click="updateSearch(location)" class="mb-3">
             <v-list-tile-action>
               <v-icon color="primary">location_on</v-icon>
             </v-list-tile-action>
