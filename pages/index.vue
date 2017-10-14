@@ -162,6 +162,7 @@
         this.isCenteredAtGeolocation = value
       },
       updateSearch (location) {
+        this.isCenteredAtGeolocation = false
         this.search = location.address
       }
     }
