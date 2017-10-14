@@ -134,15 +134,6 @@
        */
       gMapZoom () {
         return this.filteredLocations.length === 1 ? 15 : 10
-      },
-      /**
-       * Whether the user wants the map to center on their location or not.
-       * @type {Boolean}
-       */
-      isCenteredAtGeolocation: {
-        get () {
-          return this.search.length === 0
-        }
       }
     },
     async mounted () {
