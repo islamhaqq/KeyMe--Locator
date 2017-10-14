@@ -4,7 +4,7 @@ for analytics to determine priority locaitons for future KeyMe kiosks. -->
 <template>
   <v-dialog v-model="isRequestKioskDialogOpen" fullscreen>
     <!-- The button that opens the dialog. -->
-    <v-btn slot="activator" color="primary" flat>Request Local Kiosk</v-btn>
+    <v-btn slot="activator" color="primary" flat>No Kiosk Nearby?</v-btn>
 
     <!-- Main dialog content. -->
     <v-card>
