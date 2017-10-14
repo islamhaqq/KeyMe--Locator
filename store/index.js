@@ -152,7 +152,9 @@ export const mutations = {
    * @return {Void}
    */
   toggleSnackbar (state, payload) {
+    state.isSnackbarOpen = payload.display
+
+    // optional paylaod
     if (payload.message) state.snackbarMessage = payload.message
-    if (payload.display) state.isSnackbarOpen = payload.display
   }
 }
