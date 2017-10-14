@@ -2,7 +2,7 @@
 close or open whenever, provided with a message. -->
 
 <template>
-  <v-snackbar v-model="isSnackbarOpen" bottom>
+  <v-snackbar v-model="isSnackbarOpen" multi-line	bottom>
     <!-- TODO: default message? -->
     <span>{{ snackbarMessage }}</span>
     <v-btn @click.native="isSnackbarOpen = false" flat color="pink">
