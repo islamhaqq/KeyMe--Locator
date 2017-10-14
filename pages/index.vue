@@ -56,7 +56,7 @@
 </template>
 
 <script>
-  import RequestKioskDialog from '@/components/RequestKioskDialog'
+  import RequestKioskDialog from '@/components/request-kiosk-dialog'
 
   export default {
     components: {

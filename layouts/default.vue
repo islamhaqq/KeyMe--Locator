@@ -21,7 +21,7 @@ route. -->
 </template>
 
 <script>
-  import NavToolbar from '@/components/NavToolbar'
+  import NavToolbar from '@/components/nav-toolbar'
   import Snackbar from '@/components/snackbar'
 
   export default {
