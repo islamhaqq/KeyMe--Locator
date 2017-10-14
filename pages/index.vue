@@ -9,8 +9,8 @@
       <v-card lat class="mb-2">
         <v-toolbar dense light>
           <!-- TODO: optimizations. Debounce the keyup. -->
-          <v-text-field v-model="search" @keyup="updateMapCenterToGeolocation(false)" type="text" placeholder="Search locations..." prepend-icon="search" hide-details single-line light />
-          <v-btn @click.native="updateMapCenterToGeolocation(true)" icon>
+          <v-text-field v-model="search" type="text" placeholder="Search locations..." prepend-icon="search" hide-details single-line light />
+          <v-btn @click.native="this.search = ''" icon>
             <v-icon>my_location</v-icon>
           </v-btn>
         </v-toolbar>
@@ -69,11 +69,6 @@
          * @type {String}
          */
         search: '',
-        /**
-         * Whether the user wants the map to center on their location or not.
-         * @type {Boolean}
-         */
-        isCenteredAtGeolocation: false
       }
     },
     computed: {
@@ -137,6 +132,15 @@
        */
       gMapZoom () {
         return this.filteredLocations.length === 1 ? 15 : 10
+      },
+      /**
+       * Whether the user wants the map to center on their location or not.
+       * @type {Boolean}
+       */
+      isCenteredAtGeolocation: {
+        get () {
+          return this.search.length === 0
+        }
       }
     },
     async mounted () {
@@ -149,20 +153,7 @@
       })
     },
     methods: {
-      // TODO: We might not need this method since its just a simple assignment.
-      /**
-       * Updates the Google Map to user's current location if GPS allowed.
-       * @method updateMapCenterToGeolocation
-       * @return {Void}
-       */
-      updateMapCenterToGeolocation (value) {
-        // reset searchbar if its filled since map display is changing
-        if (value) this.search = ''
-
-        this.isCenteredAtGeolocation = value
-      },
       updateSearch (location) {
-        this.isCenteredAtGeolocation = false
         this.search = location.address
       }
     }
