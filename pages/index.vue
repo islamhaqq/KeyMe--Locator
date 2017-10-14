@@ -122,13 +122,11 @@
        * The location the map is currently centered at.
        * @method gMapCenter
        * @return {Object} - Latitudinal and longitudinal coordinates.
+       * Automatically centers to user search request. Otherwise defaults
+       * to geolocation.
        */
       gMapCenter () {
-        if (this.isCenteredAtGeolocation) {
-          return this.geolocation
-        } else {
-          return this.filteredLocations.length === 1 ? this.filteredLocations[0].coordinate : {lat: 40.7556469, lng: -73.88191789999996}
-        }
+        return this.filteredLocations.length === 1 ? this.filteredLocations[0].coordinate : this.geolocation
       },
       /**
        * The current zoom level of the map.
