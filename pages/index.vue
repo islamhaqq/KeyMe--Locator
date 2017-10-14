@@ -15,7 +15,7 @@
           </v-btn>
         </v-toolbar>
         <v-card-media height="300px">
-          <gmap-map :center="gMapCenter" @drag="isCenteredAtGeolocation = false" @center_changed="reportNewCenter" :zoom="gMapZoom" map-type-id="terrain" style="width: 500px; height: 300px">
+          <gmap-map :center="gMapCenter" @drag="dragged = true" @center_changed="reportNewCenter" :zoom="gMapZoom" map-type-id="terrain" style="width: 500px; height: 300px">
             <!-- Markers denoting kiosk locations  -->
             <gmap-marker v-for="location of filteredLocations" :key="location.id" :position="location.coordinate" :clickable="true" @click="updateSearch(location)"/>
           </gmap-map>
@@ -72,7 +72,8 @@
         reportedCenter: {
           lat: null,
           lng: null
-        }
+        },
+        dragged: false
       }
     },
     computed: {
@@ -143,7 +144,7 @@
        */
       isCenteredAtGeolocation: {
         get () {
-          return this.search.length === 0
+          return this.search.length === 0 && !this.dragged
         }
       }
     },
@@ -167,6 +168,8 @@
       goToGeolocation () {
         // clear the search input
         this.search = ''
+
+        this.dragged = false
       }
     }
   }
