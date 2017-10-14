@@ -86,7 +86,7 @@ for analytics to determine priority locaitons for future KeyMe kiosks. -->
 
           this.$store.commit('toggleSnackbar', {
             display: true,
-            message: 'Thank you for letting us know! We\'ll try to get a kiosk set up in your requested location asap!'
+            message: 'We\'ll try to get a kiosk set up in your location asap!'
           })
 
           // close the dialog after successful submission
