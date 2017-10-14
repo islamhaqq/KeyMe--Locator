@@ -10,7 +10,7 @@
         <v-toolbar dense light>
           <!-- TODO: optimizations. Debounce the keyup. -->
           <v-text-field v-model="search" type="text" placeholder="Search locations..." prepend-icon="search" hide-details single-line light />
-          <v-btn @click.native="this.search = ''" icon>
+          <v-btn @click.native="search = ''" icon>
             <v-icon>my_location</v-icon>
           </v-btn>
         </v-toolbar>
@@ -72,7 +72,7 @@
         reportedCenter: {
           lat: null,
           lng: null
-        },
+        }
       }
     },
     computed: {
