@@ -156,6 +156,9 @@
        * @return {Void}
        */
       updateMapCenterToGeolocation (value) {
+        // reset searchbar if its filled since map display is changing
+        if (value) this.search = ''
+
         this.isCenteredAtGeolocation = value
       }
     }
