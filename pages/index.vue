@@ -17,7 +17,7 @@
         <v-card-media height="300px">
           <gmap-map :center="gMapCenter" :zoom="gMapZoom" map-type-id="terrain" style="width: 500px; height: 300px">
             <!-- Markers denoting kiosk locations  -->
-            <gmap-marker v-for="location of filteredLocations" :key="location.id" :position="location.coordinate"/>
+            <gmap-marker v-for="location of filteredLocations" :key="location.id" :position="location.coordinate" :clickable="true" @click="updateSearch(location)"/>
           </gmap-map>
         </v-card-media>
       </v-card>
@@ -160,6 +160,9 @@
         if (value) this.search = ''
 
         this.isCenteredAtGeolocation = value
+      },
+      updateSearch (location) {
+        this.search = location.address
       }
     }
   }
