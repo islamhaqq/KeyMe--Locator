@@ -89,10 +89,23 @@ for analytics to determine priority locaitons for future KeyMe kiosks. -->
             message: 'We\'ll try to get a kiosk set up in your location asap!'
           })
 
-          // close the dialog after successful submission
+          // close and clear the dialog after successful submission
           this.close()
+          this.reset()
         } catch (error) {
           throw new Error(error)
+        }
+      },
+      /**
+       * Resets the dialog state.
+       * @method reset
+       */
+      reset () {
+        this.request = {
+          name: '',
+          email: '',
+          zipCode: '',
+          additionalComments: ''
         }
       }
     }
