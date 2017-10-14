@@ -137,13 +137,17 @@
       }
     },
     async mounted () {
-      // get geolocation of user using HTML5 geolocation API
-      await navigator.geolocation.getCurrentPosition((position) => {
-        this.$store.commit('updateGeolocation', {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
+      try {
+        // get geolocation of user using HTML5 geolocation API
+        await navigator.geolocation.getCurrentPosition((position) => {
+          this.$store.commit('updateGeolocation', {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          })
         })
-      })
+      } catch (error) {
+        throw new Error(error)
+      }
     },
     methods: {
       updateSearch (location) {
