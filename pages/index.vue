@@ -89,9 +89,19 @@
        * @type {String}
        */
       search: {
+        /**
+         * Get what the user typed in the search bar.
+         * @method get
+         * @return {String} - What the user typed in the search bar.
+         */
         get () {
           return this.$store.state.search
         },
+        /**
+         * Update the search bar input with the new input.
+         * @method set
+         * @param {String} newInput - The new search query.
+         */
         set (newInput) {
           this.$store.commit('updateSearch', newInput)
         }
