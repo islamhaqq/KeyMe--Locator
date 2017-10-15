@@ -18,7 +18,7 @@
           <v-layout align-center row>
             <gmap-map v-if="geolocation.lat" :center="gMapCenter" @center_changed="reportNewCenter" :zoom="gMapZoom" map-type-id="terrain" style="width: 100%; height: 100%">
               <!-- Markers denoting kiosk locations  -->
-              <gmap-marker v-for="location of filteredLocations" :key="location.id" :position="location.coordinate" :clickable="true" @click="updateSearch(location)"/>
+              <gmap-marker v-for="location of filteredLocations" :key="location.id" :position="location.coordinates" :clickable="true" @click="updateSearch(location)"/>
             </gmap-map>
             <v-flex v-else class="text-xs-center">
               <v-progress-circular indeterminate :size="128" color="primary" />
@@ -132,7 +132,7 @@
        * to geolocation.
        */
       gMapCenter () {
-        return this.filteredLocations.length === 1 ? this.filteredLocations[0].coordinate : this.geolocation
+        return this.filteredLocations.length === 1 ? this.filteredLocations[0].coordinates : this.geolocation
       },
       /**
        * The current zoom level of the map.

@@ -10,7 +10,7 @@ export const state = () => ({
       address: '85-10 Northern Boulevard, Jackson Heights, NY, 11372',
       city: 'Jackson Heights',
       state: 'NY',
-      coordinate: {
+      coordinates: {
         lat: 40.7556469,
         lng: -73.88191789999996
       }
@@ -21,7 +21,7 @@ export const state = () => ({
       address: '300 N Dean Rd, Auburn, AL',
       city: 'Auburn',
       state: 'AL',
-      coordinate: {
+      coordinates: {
         lat: 32.6107717,
         lng: -85.46340179999999
       }
@@ -32,7 +32,7 @@ export const state = () => ({
       address: '337 Central Ave, Jersey City, NJ, 07307',
       city: 'Jersey City',
       state: 'NJ',
-      coordinate: {
+      coordinates: {
         lat: 40.7465856,
         lng: -74.04924389999996
       }
@@ -43,7 +43,7 @@ export const state = () => ({
       address: '850 3rd Avenue, Brooklyn, NY, 11232',
       city: 'Brooklyn',
       state: 'NY',
-      coordinate: {
+      coordinates: {
         lat: 40.6592281,
         lng: -74.0042818
       }
@@ -54,7 +54,7 @@ export const state = () => ({
       address: '1381 Atlantic Ave, Brooklyn, NY, 11216',
       city: 'Crown Heights',
       state: 'NY',
-      coordinate: {
+      coordinates: {
         lat: 40.6786822,
         lng: -73.94443160000003
       }
@@ -65,7 +65,7 @@ export const state = () => ({
       address: 'W 24th Street, NY 282 8th Avenue, New York, NY, 10001',
       city: 'New York',
       state: 'NY',
-      coordinate: {
+      coordinates: {
         lat: 40.7459871,
         lng: -73.9975427
       }
