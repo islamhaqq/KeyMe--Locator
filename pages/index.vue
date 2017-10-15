@@ -10,9 +10,12 @@
         <v-toolbar dense light>
           <!-- TODO: optimizations. Debounce the keyup. -->
           <v-text-field v-model="search" type="text" placeholder="Search locations..." prepend-icon="search" hide-details single-line light />
-          <v-btn @click.native="goToGeolocation" icon>
-            <v-icon>my_location</v-icon>
-          </v-btn>
+          <v-tooltip bottom>
+            <v-btn @click.native="goToGeolocation" icon slot="activator">
+              <v-icon>my_location</v-icon>
+            </v-btn>
+            <span>Go to your location</span>
+          </v-tooltip>
         </v-toolbar>
         <v-card-media height="300px">
           <v-layout align-center row>

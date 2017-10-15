@@ -13,7 +13,8 @@ import {
   VTextField,
   VDialog,
   VSnackbar,
-  VProgressCircular
+  VProgressCircular,
+  VTooltip
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -30,6 +31,7 @@ Vue.use(Vuetify, {
     VTextField,
     VDialog,
     VSnackbar,
-    VProgressCircular
+    VProgressCircular,
+    VTooltip
   }
 })
