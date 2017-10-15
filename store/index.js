@@ -322,10 +322,21 @@ export const state = () => ({
   locationDetails: {
     visible: false,
     location: null
-  }
+  },
+  search: ''
 })
 
 export const mutations = {
+  /**
+   * Updates the search bar input with user input.
+   * @method updateSearch
+   * @param  {Object} state - The application level state.
+   * @param  {String} payload - The input text in the kiosk finder search bar.
+   * @return {Void}
+   */
+  updateSearch (state, payload) {
+    state.search = payload
+  },
   /**
    * Open or close the "request local kiosk" dialog.
    * @method toggleRequestKioskDialog

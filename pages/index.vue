@@ -77,11 +77,6 @@
     },
     data: function () {
       return {
-        /**
-         * What the user is typing in to the search bar for locating kiosks.
-         * @type {String}
-         */
-        search: '',
         reportedCenter: {
           lat: null,
           lng: null
@@ -89,6 +84,18 @@
       }
     },
     computed: {
+      /**
+       * What the user is typing in to the search bar for locating kiosks.
+       * @type {String}
+       */
+      search: {
+        get () {
+          return this.$store.state.search
+        },
+        set (newInput) {
+          this.$store.commit('updateSearch', newInput)
+        }
+      },
       /**
        * Gets all the data on all the locations kiosks are present in.
        * @method locations
