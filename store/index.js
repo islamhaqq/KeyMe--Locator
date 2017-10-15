@@ -326,6 +326,36 @@ export const state = () => ({
   search: ''
 })
 
+export const getters = {
+  /**
+   * Tries to get the kiosk location that the user is trying to search for.
+   * @method filteredLocations
+   * @return {Array} - An array of kiosk locations.
+   */
+  filteredLocations (state) {
+    // allows user to search with tags or individual words
+    const filterTags = state.search.toLowerCase().split(' ')
+
+    return state.locations.filter(location => {
+      // combine all the searchable criteria and lowercase it
+      let locationBlob = location.address + location.retailer + location.state + location.city
+
+      locationBlob = locationBlob.toLowerCase()
+
+      // see if the location matches all provided filter tags
+      let matches = true
+      filterTags.forEach((filterTag) => {
+        if (!locationBlob.includes(filterTag)) {
+          matches = false
+        }
+      })
+
+      // add location to array if tag words match meta
+      return matches
+    })
+  }
+}
+
 export const mutations = {
   /**
    * Updates the search bar input with user input.
