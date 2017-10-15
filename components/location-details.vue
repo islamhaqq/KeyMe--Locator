@@ -45,7 +45,7 @@
               </v-list-tile-action>
             </v-list-tile>
 
-            <v-list-tile v-for="(storeHour, day) in locationDetails.storeHours">
+            <v-list-tile v-for="(storeHour, day) in locationDetails.storeHours" :key="day">
               <v-list-tile-content>
                 <v-list-tile-title>{{ day }}</v-list-tile-title>
                 <v-list-tile-sub-title>{{ storeHour }}</v-list-tile-sub-title>
@@ -55,7 +55,13 @@
               </v-list-tile-action>
             </v-list-tile>
           </v-list-group>
+
+          <v-subheader>AVAILABLE KEYS</v-subheader>
         </v-list>
+
+        <v-carousel>
+          <v-carousel-item v-for="(availableKey, name) in locationDetails.availableKeys" v-bind:src="availableKey.src" :key="name" />
+        </v-carousel>
       </v-card-text>
     </v-card>
   </v-bottom-sheet>

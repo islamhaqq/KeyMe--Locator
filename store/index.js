@@ -23,6 +23,32 @@ export const state = () => ({
         Thursday: '24h',
         Friday: '24h',
         Saturday: '24h'
+      },
+      availableKeys: {
+        'New York Yankees': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        },
+        'Hi-Performance': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Hi-Performance_Keys-921c9673b3996cce53cd2aa5378fbb61.png'
+        },
+        Brass: {
+          price: 7.49,
+          src: 'https://cdn.key.me/assets/app/Brass_Keys-5f9622f8ced0b01f55277a118c90004d.png'
+        },
+        'NYU Subway': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        },
+        'Bottle Opener': {
+          price: 9.49,
+          src: 'https://cdn.key.me/assets/app/Accessories-6e1888005d079dedb190ab93f0cb5b20.png'
+        },
+        Dots: {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        }
       }
     },
     {
@@ -44,6 +70,32 @@ export const state = () => ({
         Thursday: '24h',
         Friday: '24h',
         Saturday: '24h'
+      },
+      availableKeys: {
+        'New York Yankees': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        },
+        'Hi-Performance': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Hi-Performance_Keys-921c9673b3996cce53cd2aa5378fbb61.png'
+        },
+        Brass: {
+          price: 7.49,
+          src: 'https://cdn.key.me/assets/app/Brass_Keys-5f9622f8ced0b01f55277a118c90004d.png'
+        },
+        'NYU Subway': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        },
+        'Bottle Opener': {
+          price: 9.49,
+          src: 'https://cdn.key.me/assets/app/Accessories-6e1888005d079dedb190ab93f0cb5b20.png'
+        },
+        Dots: {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        }
       }
     },
     {
@@ -65,6 +117,32 @@ export const state = () => ({
         Thursday: '24h',
         Friday: '24h',
         Saturday: '24h'
+      },
+      availableKeys: {
+        'New York Yankees': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        },
+        'Hi-Performance': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Hi-Performance_Keys-921c9673b3996cce53cd2aa5378fbb61.png'
+        },
+        Brass: {
+          price: 7.49,
+          src: 'https://cdn.key.me/assets/app/Brass_Keys-5f9622f8ced0b01f55277a118c90004d.png'
+        },
+        'NYU Subway': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        },
+        'Bottle Opener': {
+          price: 9.49,
+          src: 'https://cdn.key.me/assets/app/Accessories-6e1888005d079dedb190ab93f0cb5b20.png'
+        },
+        Dots: {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        }
       }
     },
     {
@@ -86,6 +164,32 @@ export const state = () => ({
         Thursday: '24h',
         Friday: '24h',
         Saturday: '24h'
+      },
+      availableKeys: {
+        'New York Yankees': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        },
+        'Hi-Performance': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Hi-Performance_Keys-921c9673b3996cce53cd2aa5378fbb61.png'
+        },
+        Brass: {
+          price: 7.49,
+          src: 'https://cdn.key.me/assets/app/Brass_Keys-5f9622f8ced0b01f55277a118c90004d.png'
+        },
+        'NYU Subway': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        },
+        'Bottle Opener': {
+          price: 9.49,
+          src: 'https://cdn.key.me/assets/app/Accessories-6e1888005d079dedb190ab93f0cb5b20.png'
+        },
+        Dots: {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        }
       }
     },
     {
@@ -107,6 +211,32 @@ export const state = () => ({
         Thursday: '24h',
         Friday: '24h',
         Saturday: '24h'
+      },
+      availableKeys: {
+        'New York Yankees': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        },
+        'Hi-Performance': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Hi-Performance_Keys-921c9673b3996cce53cd2aa5378fbb61.png'
+        },
+        Brass: {
+          price: 7.49,
+          src: 'https://cdn.key.me/assets/app/Brass_Keys-5f9622f8ced0b01f55277a118c90004d.png'
+        },
+        'NYU Subway': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        },
+        'Bottle Opener': {
+          price: 9.49,
+          src: 'https://cdn.key.me/assets/app/Accessories-6e1888005d079dedb190ab93f0cb5b20.png'
+        },
+        Dots: {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        }
       }
     },
     {
@@ -128,6 +258,32 @@ export const state = () => ({
         Thursday: '24h',
         Friday: '24h',
         Saturday: '24h'
+      },
+      availableKeys: {
+        'New York Yankees': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        },
+        'Hi-Performance': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Hi-Performance_Keys-921c9673b3996cce53cd2aa5378fbb61.png'
+        },
+        Brass: {
+          price: 7.49,
+          src: 'https://cdn.key.me/assets/app/Brass_Keys-5f9622f8ced0b01f55277a118c90004d.png'
+        },
+        'NYU Subway': {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        },
+        'Bottle Opener': {
+          price: 9.49,
+          src: 'https://cdn.key.me/assets/app/Accessories-6e1888005d079dedb190ab93f0cb5b20.png'
+        },
+        Dots: {
+          price: 8.49,
+          src: 'https://cdn.key.me/assets/app/Custom_Designs-772dcba451c6d7f30a0a74f399c76854.png'
+        }
       }
     }
   ],

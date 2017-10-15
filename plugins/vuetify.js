@@ -16,7 +16,8 @@ import {
   VProgressCircular,
   VTooltip,
   VBottomSheet,
-  VSubheader
+  VSubheader,
+  VCarousel
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -36,6 +37,7 @@ Vue.use(Vuetify, {
     VProgressCircular,
     VTooltip,
     VBottomSheet,
-    VSubheader
+    VSubheader,
+    VCarousel
   }
 })
