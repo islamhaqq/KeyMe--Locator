@@ -170,13 +170,15 @@
         // clear the search input
         this.search = ''
       },
+      /**
+       * Update the search query so that GMaps focuses on the specified
+       * location, which triggers the location details FAB to display.
+       * @method focusOnLocation
+       * @param  {Object} location - The store/kiosk location meta.
+       * @return {Void}
+       */
       focusOnLocation (location) {
         this.search = location.address
-
-        this.$store.commit('toggleLocationDetails', {
-          visible: true,
-          location: location
-        })
       }
     }
   }
