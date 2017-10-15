@@ -13,6 +13,7 @@ route. -->
         </v-container>
       </v-content>
     </main>
+    <OpenLocationDetailsFab />
     <v-footer fixed app>
       <span>&copy; 2017</span>
     </v-footer>
@@ -23,11 +24,13 @@ route. -->
 <script>
   import NavToolbar from '@/components/nav-toolbar'
   import Snackbar from '@/components/snackbar'
+  import OpenLocationDetailsFab from '@/components/open-location-details-fab'
 
   export default {
     components: {
       NavToolbar,
-      Snackbar
+      Snackbar,
+      OpenLocationDetailsFab
     }
   }
 </script>
