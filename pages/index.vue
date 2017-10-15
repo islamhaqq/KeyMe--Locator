@@ -21,7 +21,7 @@
           <v-layout align-center row>
             <gmap-map v-if="geolocation.lat" :center="gMapCenter" @center_changed="reportNewCenter" :zoom="gMapZoom" map-type-id="terrain" style="width: 100%; height: 100%">
               <!-- Markers denoting kiosk locations  -->
-              <gmap-marker v-for="location of filteredLocations" :key="location.id" :position="location.coordinates" :clickable="true" @click="updateSearch(location)" @dblclick="toggleLocationDetails(location)"/>
+              <gmap-marker v-for="location of filteredLocations" :key="location.id" :position="location.coordinates" :clickable="true" @click="focusOnLocation(location)" />
             </gmap-map>
             <v-flex v-else class="text-xs-center">
               <v-progress-circular indeterminate :size="128" color="primary" />
@@ -38,7 +38,7 @@
 
         <!-- Listed locations. -->
         <v-list three-line>
-          <v-list-tile v-for="location of filteredLocations" :key="location.id" @click="updateSearch(location)" class="mb-3">
+          <v-list-tile v-for="location of filteredLocations" :key="location.id" @click="focusOnLocation(location)" class="mb-3">
             <v-list-tile-action>
               <v-icon color="primary">location_on</v-icon>
             </v-list-tile-action>
@@ -163,9 +163,6 @@
       }
     },
     methods: {
-      updateSearch (location) {
-        this.search = location.address
-      },
       reportNewCenter (reportedCenter) {
         this.reportedCenter.lat = reportedCenter.lat()
         this.reportedCenter.lng = reportedCenter.lng()
@@ -174,7 +171,9 @@
         // clear the search input
         this.search = ''
       },
-      toggleLocationDetails (location) {
+      focusOnLocation (location) {
+        this.search = location.address
+
         this.$store.commit('toggleLocationDetails', {
           visible: true,
           location: location
