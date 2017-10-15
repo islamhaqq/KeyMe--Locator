@@ -21,7 +21,7 @@
           <v-layout align-center row>
             <gmap-map v-if="geolocation.lat" :center="gMapCenter" @center_changed="reportNewCenter" :zoom="gMapZoom" map-type-id="terrain" style="width: 100%; height: 100%">
               <!-- Markers denoting kiosk locations  -->
-              <gmap-marker v-for="location of filteredLocations" :key="location.id" :position="location.coordinates" :clickable="true" @click="updateSearch(location)"/>
+              <gmap-marker v-for="location of filteredLocations" :key="location.id" :position="location.coordinates" :clickable="true" @click="updateSearch(location)" @dblclick="toggleLocationDetails(location)"/>
             </gmap-map>
             <v-flex v-else class="text-xs-center">
               <v-progress-circular indeterminate :size="128" color="primary" />
@@ -62,15 +62,18 @@
         </v-card-actions>
       </v-card>
     </v-flex>
+    <LocationDetails />
   </v-layout>
 </template>
 
 <script>
   import RequestKioskDialog from '@/components/request-kiosk-dialog'
+  import LocationDetails from '@/components/location-details'
 
   export default {
     components: {
-      RequestKioskDialog
+      RequestKioskDialog,
+      LocationDetails
     },
     data: function () {
       return {
@@ -170,6 +173,12 @@
       goToGeolocation () {
         // clear the search input
         this.search = ''
+      },
+      toggleLocationDetails (location) {
+        this.$store.commit('toggleLocationDetails', {
+          visible: true,
+          location: location
+        })
       }
     }
   }

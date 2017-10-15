@@ -13,6 +13,16 @@ export const state = () => ({
       coordinates: {
         lat: 40.7556469,
         lng: -73.88191789999996
+      },
+      phoneNumber: '718-213-2139',
+      storeHours: {
+        Sunday: '24h',
+        Monday: '24h',
+        Tuesday: '24h',
+        Wednesday: '24h',
+        Thursday: '24h',
+        Friday: '24h',
+        Saturday: '24h'
       }
     },
     {
@@ -24,6 +34,16 @@ export const state = () => ({
       coordinates: {
         lat: 32.6107717,
         lng: -85.46340179999999
+      },
+      phoneNumber: '718-213-2139',
+      storeHours: {
+        Sunday: '24h',
+        Monday: '24h',
+        Tuesday: '24h',
+        Wednesday: '24h',
+        Thursday: '24h',
+        Friday: '24h',
+        Saturday: '24h'
       }
     },
     {
@@ -35,6 +55,16 @@ export const state = () => ({
       coordinates: {
         lat: 40.7465856,
         lng: -74.04924389999996
+      },
+      phoneNumber: '718-213-2139',
+      storeHours: {
+        Sunday: '24h',
+        Monday: '24h',
+        Tuesday: '24h',
+        Wednesday: '24h',
+        Thursday: '24h',
+        Friday: '24h',
+        Saturday: '24h'
       }
     },
     {
@@ -46,6 +76,16 @@ export const state = () => ({
       coordinates: {
         lat: 40.6592281,
         lng: -74.0042818
+      },
+      phoneNumber: '718-213-2139',
+      storeHours: {
+        Sunday: '24h',
+        Monday: '24h',
+        Tuesday: '24h',
+        Wednesday: '24h',
+        Thursday: '24h',
+        Friday: '24h',
+        Saturday: '24h'
       }
     },
     {
@@ -57,6 +97,16 @@ export const state = () => ({
       coordinates: {
         lat: 40.6786822,
         lng: -73.94443160000003
+      },
+      phoneNumber: '718-213-2139',
+      storeHours: {
+        Sunday: '24h',
+        Monday: '24h',
+        Tuesday: '24h',
+        Wednesday: '24h',
+        Thursday: '24h',
+        Friday: '24h',
+        Saturday: '24h'
       }
     },
     {
@@ -68,6 +118,16 @@ export const state = () => ({
       coordinates: {
         lat: 40.7459871,
         lng: -73.9975427
+      },
+      phoneNumber: '718-213-2139',
+      storeHours: {
+        Sunday: '24h',
+        Monday: '24h',
+        Tuesday: '24h',
+        Wednesday: '24h',
+        Thursday: '24h',
+        Friday: '24h',
+        Saturday: '24h'
       }
     }
   ],
@@ -102,7 +162,11 @@ export const state = () => ({
    * @type {Boolean}
    */
   isSnackbarOpen: false,
-  snackbarMessage: ''
+  snackbarMessage: '',
+  locationDetails: {
+    visible: false,
+    location: null
+  }
 })
 
 export const mutations = {
@@ -156,5 +220,9 @@ export const mutations = {
 
     // optional paylaod
     if (payload.message) state.snackbarMessage = payload.message
+  },
+  toggleLocationDetails (state, payload) {
+    state.locationDetails.visible = payload.visible
+    state.locationDetails.location = payload.location
   }
 }

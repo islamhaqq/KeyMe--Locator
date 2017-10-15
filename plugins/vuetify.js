@@ -14,7 +14,9 @@ import {
   VDialog,
   VSnackbar,
   VProgressCircular,
-  VTooltip
+  VTooltip,
+  VBottomSheet,
+  VSubheader
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -32,6 +34,8 @@ Vue.use(Vuetify, {
     VDialog,
     VSnackbar,
     VProgressCircular,
-    VTooltip
+    VTooltip,
+    VBottomSheet,
+    VSubheader
   }
 })
