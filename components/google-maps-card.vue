@@ -37,6 +37,14 @@
     },
     data: function () {
       return {
+        // TODO: fix issue where you can't go to geolocation after panning.
+        /**
+         * Due to a vue2-google-maps limitation with two way data binding,
+         * it is recommended to update a "reportedCenter" property on center
+         * change event which the GMaps can later synchronize to. This may
+         * be the solution to the GMap panning geolocation glitch.
+         * @type {Object}
+         */
         reportedCenter: {
           lat: null,
           lng: null
@@ -114,10 +122,23 @@
       }
     },
     methods: {
+      /**
+       * A method that fires on center change event which keeps track of the
+       * current GMap center.
+       * @method reportNewCenter
+       * @param  {[type]}        reportedCenter [description]
+       * @return {[type]}                       [description]
+       */
       reportNewCenter (reportedCenter) {
         this.reportedCenter.lat = reportedCenter.lat()
         this.reportedCenter.lng = reportedCenter.lng()
       },
+      /**
+       * Resets the search input invoking the GMap component to unfocus
+       * and default to user's current geolocation.
+       * @method goToGeolocation
+       * @return {Void}
+       */
       goToGeolocation () {
         // clear the search input
         this.search = ''

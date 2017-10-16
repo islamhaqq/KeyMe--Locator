@@ -1,3 +1,7 @@
+<!-- A card displaying a list of all the kiosk locations that is clickable
+which updates the google maps and search to focus on the location. This then
+allows users to open the location details. -->
+
 <template>
   <!-- Kiosk Locations -->
   <v-card>
