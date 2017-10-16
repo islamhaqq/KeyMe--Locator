@@ -14,7 +14,7 @@ address. It also allows users to get directions to the area. -->
           <!-- Button that takes user to Google Maps for directions. -->
           <v-list-tile>
             <v-list-tile-content>
-              <v-btn @click.native="getDirections" color="primary">
+              <v-btn :href="directions" rel="noopener noreferrer" target="_blank" color="primary">
                 GET DIRECTIONS
               </v-btn>
             </v-list-tile-content>
@@ -77,6 +77,8 @@ address. It also allows users to get directions to the area. -->
 </template>
 
 <script>
+  import querystring from 'querystring'
+
   export default {
     computed: {
       /**
@@ -114,6 +116,25 @@ address. It also allows users to get directions to the area. -->
        */
       locationDetails () {
         return this.$store.state.locationDetails.location
+      },
+      /**
+       * Gets the google maps directions url to direct user to use the GMaps
+       * app or web app for the directions to the kiosk in the store.
+       * See developers.google.com/maps/documentation for more info.
+       * @method directions
+       * @return {String} - The url to get directions to the store.
+       */
+      directions () {
+        const baseURI = 'https://www.google.com/maps/dir/?api=1&'
+
+        // add in parameters for the directions url
+        const parameters = {
+          origin: `${this.$store.state.geolocation.lng},${this.$store.state.geolocation.lat}`,
+          destination: `${this.locationDetails.address}`
+        }
+
+        // convert parameter into queryable string for GMaps API
+        return baseURI + querystring.stringify(parameters)
       }
     },
     methods: {
