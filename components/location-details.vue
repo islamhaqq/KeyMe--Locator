@@ -1,3 +1,8 @@
+<!-- The location details component is a bottom sheet similar to a dialog
+that displays a store's details regarding the KeyMe kiosks. It includes meta
+such as store hours, the keys that are available, as well as the retailer and
+address. It also allows users to get directions to the area. -->
+
 <template>
   <v-bottom-sheet v-model="isLocationDetailsOpen" v-if="isLocationDetailsOpen" :scrollable="true" full-width>
     <v-card>
@@ -15,7 +20,9 @@
             </v-list-tile-content>
           </v-list-tile>
 
+          <!-- Extra details on the store. -->
           <v-subheader>STORE INFORMATION</v-subheader>
+          <!-- Store phone number. -->
           <v-list-tile>
             <v-list-tile-action>
               <v-icon>phone</v-icon>
@@ -31,20 +38,21 @@
           </v-list-tile>
 
           <v-list-group>
+            <!-- Expandable list item to display store hours. -->
             <v-list-tile slot="item">
               <v-list-tile-action>
                 <v-icon>store</v-icon>
               </v-list-tile-action>
-
               <v-list-tile-content>
                 <v-list-tile-title>Store Hours</v-list-tile-title>
               </v-list-tile-content>
-
               <v-list-tile-action>
                 <v-icon>keyboard_arrow_down</v-icon>
               </v-list-tile-action>
             </v-list-tile>
 
+            <!-- Sub list items that reveal when user clicks the expandable
+            list item. -->
             <v-list-tile v-for="(storeHour, day) in locationDetails.storeHours" :key="day">
               <v-list-tile-content>
                 <v-list-tile-title>{{ day }}</v-list-tile-title>
@@ -59,6 +67,7 @@
           <v-subheader>AVAILABLE KEYS</v-subheader>
         </v-list>
 
+        <!-- The keys the kiosk in the store that customers can purchase. -->
         <v-carousel>
           <v-carousel-item v-for="(availableKey, name) in locationDetails.availableKeys" v-bind:src="availableKey.src" :key="name" />
         </v-carousel>
@@ -70,10 +79,26 @@
 <script>
   export default {
     computed: {
+      /**
+       * Whether the location details bottom sheet is visible or not.
+       * @type {Object}
+       */
       isLocationDetailsOpen: {
+        /**
+         * Accesses the vuex store to get whether the bottom sheet should be
+         * opened or not.
+         * @method get
+         * @return {Boolean} - Whether the location details bottom sheet is
+         * visible or not.
+         */
         get () {
           return this.$store.state.locationDetails.visible
         },
+        /**
+         * Updates the vuex store state to close the bottom sheet and as well
+         * as clear the store location to get data from.
+         * @method set
+         */
         set () {
           this.$store.commit('toggleLocationDetails', {
             visible: false,
@@ -81,11 +106,23 @@
           })
         }
       },
+      /**
+       * The meta information on the store such as store hours, keys available,
+       * etc.
+       * @method locationDetails
+       * @return {Object} - Information on the kiosk & store.
+       */
       locationDetails () {
         return this.$store.state.locationDetails.location
       }
     },
     methods: {
+      /**
+       * This should send a request to Google Maps or request the user to
+       * open the address to this store location in Google Maps.
+       * @method getDirections
+       * @return {Void}
+       */
       getDirections () {
         console.log('get directions')
       }
