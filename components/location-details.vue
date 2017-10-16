@@ -17,7 +17,8 @@ address. It also allows users to get directions to the area. -->
             <v-list-tile>
               <v-list-tile-content>
                 <v-btn :href="directions" rel="noopener noreferrer" target="_blank" color="primary">
-                  GET DIRECTIONS
+                  <v-icon>directions</v-icon>
+                  <span class="ml-1">GET DIRECTIONS</span>
                 </v-btn>
               </v-list-tile-content>
             </v-list-tile>
