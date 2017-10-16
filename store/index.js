@@ -63,13 +63,13 @@ export const state = () => ({
       },
       phoneNumber: '718-213-2139',
       storeHours: {
-        Sunday: '24h',
-        Monday: '24h',
-        Tuesday: '24h',
-        Wednesday: '24h',
-        Thursday: '24h',
-        Friday: '24h',
-        Saturday: '24h'
+        Sunday: '9:30am - 9:30pm',
+        Monday: '9:30am - 9:30pm',
+        Tuesday: '9:30am - 9:30pm',
+        Wednesday: '9:30am - 9:30pm',
+        Thursday: '9:30am - 9:30pm',
+        Friday: '9:30am - 9:30pm',
+        Saturday: '9:30am - 9:30pm'
       },
       availableKeys: {
         'New York Yankees': {
@@ -110,13 +110,13 @@ export const state = () => ({
       },
       phoneNumber: '718-213-2139',
       storeHours: {
-        Sunday: '24h',
-        Monday: '24h',
-        Tuesday: '24h',
-        Wednesday: '24h',
-        Thursday: '24h',
-        Friday: '24h',
-        Saturday: '24h'
+        Sunday: '11am-6pm',
+        Monday: '9am-5pm',
+        Tuesday: '9am-5pm',
+        Wednesday: '9am-5pm',
+        Thursday: '9am-5pm',
+        Friday: '9am-5pm',
+        Saturday: '11am-6pm'
       },
       availableKeys: {
         'New York Yankees': {
@@ -157,13 +157,13 @@ export const state = () => ({
       },
       phoneNumber: '718-213-2139',
       storeHours: {
-        Sunday: '24h',
-        Monday: '24h',
-        Tuesday: '24h',
-        Wednesday: '24h',
-        Thursday: '24h',
-        Friday: '24h',
-        Saturday: '24h'
+        Sunday: '8am - 6pm',
+        Monday: '8am - 6pm',
+        Tuesday: '8am - 6pm',
+        Wednesday: '8am - 6pm',
+        Thursday: '8am - 6pm',
+        Friday: '8am - 6pm',
+        Saturday: '8am - 6pm'
       },
       availableKeys: {
         'New York Yankees': {
@@ -206,9 +206,9 @@ export const state = () => ({
       storeHours: {
         Sunday: '24h',
         Monday: '24h',
-        Tuesday: '24h',
-        Wednesday: '24h',
-        Thursday: '24h',
+        Tuesday: '10am - 3pm',
+        Wednesday: '10am - 3pm',
+        Thursday: '10am - 3pm',
         Friday: '24h',
         Saturday: '24h'
       },
