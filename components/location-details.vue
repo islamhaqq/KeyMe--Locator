@@ -130,7 +130,6 @@ address. It also allows users to get directions to the area. -->
 
         // add in parameters for the directions url
         const parameters = {
-          origin: `${this.$store.state.geolocation.lng},${this.$store.state.geolocation.lat}`,
           destination: `${this.locationDetails.address}`
         }
 
