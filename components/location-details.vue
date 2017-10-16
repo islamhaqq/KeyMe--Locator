@@ -11,7 +11,8 @@ address. It also allows users to get directions to the area. -->
           <v-subheader>{{ locationDetails.retailer }}</v-subheader>
           <v-subheader>{{ locationDetails.address }}</v-subheader>
 
-          <!-- Button that takes user to Google Maps for directions. -->
+          <!-- Button that takes user to Google Maps for directions to the
+          kiosk. -->
           <v-list-tile>
             <v-list-tile-content>
               <v-btn :href="directions" rel="noopener noreferrer" target="_blank" color="primary">
@@ -135,17 +136,6 @@ address. It also allows users to get directions to the area. -->
 
         // convert parameter into queryable string for GMaps API
         return baseURI + querystring.stringify(parameters)
-      }
-    },
-    methods: {
-      /**
-       * This should send a request to Google Maps or request the user to
-       * open the address to this store location in Google Maps.
-       * @method getDirections
-       * @return {Void}
-       */
-      getDirections () {
-        console.log('get directions')
       }
     }
   }
