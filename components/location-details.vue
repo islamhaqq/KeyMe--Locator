@@ -130,7 +130,7 @@ address. It also allows users to get directions to the area. -->
 
         // add in parameters for the directions url
         const parameters = {
-          destination: `${this.locationDetails.address}`
+          destination: this.locationDetails.address
         }
 
         // convert parameter into queryable string for GMaps API
