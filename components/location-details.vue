@@ -13,13 +13,15 @@ address. It also allows users to get directions to the area. -->
 
           <!-- Button that takes user to Google Maps for directions to the
           kiosk. -->
-          <v-list-tile>
-            <v-list-tile-content>
-              <v-btn :href="directions" rel="noopener noreferrer" target="_blank" color="primary">
-                GET DIRECTIONS
-              </v-btn>
-            </v-list-tile-content>
-          </v-list-tile>
+          <v-layout row justify-center>
+            <v-list-tile>
+              <v-list-tile-content>
+                <v-btn :href="directions" rel="noopener noreferrer" target="_blank" color="primary">
+                  GET DIRECTIONS
+                </v-btn>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-layout>
 
           <!-- Extra details on the store. -->
           <v-subheader>STORE INFORMATION</v-subheader>
